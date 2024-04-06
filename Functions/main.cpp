@@ -13,8 +13,6 @@ double Qout(int a, int b);
 int Factorial(int n);
 double Power(double a, int n);
 
-
-
 void main()
 {
 	setlocale(LC_ALL, "");
