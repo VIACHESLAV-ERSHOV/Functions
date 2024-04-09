@@ -7,16 +7,18 @@ int Diff(int a, int b);
 int Prod(int a, int b);
 double Qout(int a, int b);
 
-#define FACTORIAL
-//#define POWER
+//double Factorial(int n);
+//double Power(double a, int n);
 
-int Factorial(int n);
-double Power(double a, int n);
+#define CLASSWORK
+//#define FACTORIAL
+//#define POWER
 
 void main()
 {
 	setlocale(LC_ALL, "");
-#ifdef KLASWORK
+
+#ifdef CLASSWORK
 	cout << "Hello Functions" << endl;
 	int a, b;
 	cout << "введите два числа: "; cin >> a >> b;
@@ -25,7 +27,25 @@ void main()
 	cout << a << " - " << b << " = " << Diff(a, b) << endl;
 	cout << a << " * " << b << " = " << Prod(a, b) << endl;
 	cout << a << " / " << b << " = " << Qout(a, b) << endl;
+#endif // CLASSWORK
+
+#ifdef FACTORIAL
+	int n;
+	cout << "Введите число: "; cin >> n;
+	cout << n << "! = " << Factorial(n) << endl;
+#endif // FACTORIAL
+
+#ifdef POWER
+	double a;
+	int n;
+	cout << "Основание степени: "; cin >> a;
+	cout << "Показатель степени: "; cin >> n;
+	cout << "Результат: " << Power(a, n) << endl;
+#endif // POWER
+
+	main();
 }
+
 int Sum(int a, int b)  // реализация функции ( определение функции - Fuction definition)
 {
 	int c = a + b;
@@ -45,34 +65,16 @@ double Qout(int a, int b)
 {
 	//Qoutient - частное
 	return (double)a / b;
-
 }
 
-#endif // KLASWORK
-
-#ifdef FACTORIAL
-int n;
-cout << "Введите число: "; cin >> n;
-cout << n << "! = " << Factorial(n) << endl;
-main();
-}
-int Factorial(int n)
+double Factorial(int n)
 {
-	int f = 1;
+	double f = 1;
 	for (int i = 1; i <= n; i++)
 	{
 		f *= i;
 	}
 	return f;
-#endif // FACTORIAL
-
-#ifdef POWER
-	double a;
-	int n;
-	cout << "Основание степени: "; cin >> a;
-	cout << "Показатель степени: "; cin >> n;
-	cout << "Результат: " << Power(a, n) << endl;
-	main();
 }
 double Power(double a, int n)
 {
@@ -87,6 +89,5 @@ double Power(double a, int n)
 		N *= a;
 	}
 	return N;
-#endif // POWER
-
 }
+
