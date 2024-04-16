@@ -43,6 +43,8 @@ void main()
 	cout << "Результат: " << Power(a, n) << endl;
 #endif // POWER
 
+
+
 	main();
 }
 
