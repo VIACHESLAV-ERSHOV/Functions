@@ -7,11 +7,13 @@ using std::endl;
 
 void FillRand(int arr[], const int n);
 void FillRand(double arr[], const int n);
+void FillRand(char arr[], const int n);
 void Print(const int arr[], const int n);
 void Print(const double arr[], const int n);
+void Print(const char arr[], const int n);
 void Sort(int arr[], const int n);
 void Sort(double arr[], const int n);
-
+void Sort(char arr[], const int n);
 int Sum(int arr[], const int n);
 double Sum(double arr[], const int n);
 double Avg(int arr[], const int n);
@@ -56,6 +58,7 @@ void main()
 	cout << "количество сдвигов: "; cin >> number_of_shifts1;
 	shiftLeft(brr, SIZE, number_of_shifts1);
 	Print(brr, SIZE);
+
 }
 
 void FillRand(int arr[], const int n)
@@ -72,6 +75,14 @@ void FillRand(double arr[], const int n)
 		arr[i] = rand() % 100;
 	}
 }
+void FillRand(char arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		arr[i] = rand() % 100 + 'A';
+	}
+}
+
 void Print(const int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
@@ -81,6 +92,14 @@ void Print(const int arr[], const int n)
 	cout << endl;
 }
 void Print(const double arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << tab;
+	}
+	cout << endl;
+}
+void Print(const char arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -118,6 +137,21 @@ void Sort(double arr[], const int n)
 		}
 	}
 }
+void Sort(char arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i + 1; j < n; j++)
+		{
+			if (arr[j] < arr[i])
+			{
+				int buffer = arr[i];
+				arr[i] = arr[j];
+				arr[j] = buffer;
+			}
+		}
+	}
+}
 int Sum(int arr[], const int n)
 {
 	int sum = 0;
@@ -127,6 +161,7 @@ int Sum(int arr[], const int n)
 	}
 	return sum;
 }
+
 double Sum(double arr[], const int n)
 {
 	int sum = 0;
